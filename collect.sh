@@ -28,7 +28,8 @@ for repo in $repos; do
   then
     name=$(echo "$action" | shyaml -q get-value name)
     description=$(echo "$action" | shyaml -q get-value description)
-    echo -e "- name: $name\n  description: $description\n  repo: $repo\n  metadata: $actionfilename\n" >> $filename
+    author=$(echo "$action" | shyaml -q get-value author "")
+    echo -e "- name: $name\n  description: $description\n  repo: $repo\n  author: $author\n  metadata: $actionfilename\n" >> $filename
   else
     echo "> Unable to fetch action.yaml|yml from the $repo"
     continue

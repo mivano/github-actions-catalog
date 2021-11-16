@@ -1,0 +1,66 @@
+- name: trx-parser
+  description: An action to parse trx reports from a given path and use GitHub status check api to fail PRs
+  repo: rajbos-actions/trx-parser
+  author: Nasir Amin
+  metadata: action.yml
+
+- name: SonarCloud Scan
+  description: Scan your code with SonarCloud to detect bugs, vulnerabilities and code smells in more than 25 programming languages.
+  repo: rajbos-actions/sonarcloud-github-action
+  author: 
+  metadata: action.yml
+
+- name: Azure WebApp
+  description: Deploy Web Apps/Containerized Web Apps to Azure. github.com/Azure/Actions
+  repo: rajbos-actions/webapps-deploy
+  author: 
+  metadata: action.yml
+
+- name: PSScriptAnalyzer checks
+  description: GitHub Action to run PSScriptAnalyzer static code analysis checks on Pull Requests
+  repo: rajbos-actions/github-action-psscriptanalyzer
+  author: Brandon Olin
+  metadata: action.yml
+
+- name: Snyk
+  description: Check your applications for vulnerabilties using Snyk
+  repo: rajbos-actions/snyk-actions
+  author: Gareth Rushgrove
+  metadata: action.yml
+
+- name: markdown-link-check
+  description: Check if all links are valid in markdown files.
+  repo: rajbos-actions/github-action-markdown-link-check
+  author: Gaurav Nelson
+  metadata: action.yml
+
+- name: GH Release
+  description: Github Action for creating Github Releases
+  repo: rajbos-actions/action-gh-release
+  author: softprops
+  metadata: action.yml
+
+- name: slack - GitHub Actions Slack integration
+  description: Notify Slack of GitHub Actions workflows, jobs and step status.
+  repo: rajbos-actions/slack
+  author: satterly
+  metadata: action.yml
+
+- name: Get tag
+  description: Get tag name from GITHUB_REF environment variable
+  repo: rajbos-actions/action-get-tag
+  author: 
+  metadata: action.yml
+
+- name: Setup Go environment
+  description: Setup a Go environment and add it to the PATH
+  repo: rajbos-actions/setup-go
+  author: GitHub
+  metadata: action.yml
+
+- name: GitHub Forker
+  description: GitHub action for automating fork creation
+  repo: rajbos-actions/forker
+  author: lelia
+  metadata: action.yml
+
