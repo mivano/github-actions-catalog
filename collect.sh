@@ -1,16 +1,17 @@
 #!/bin/bash
 
 usage() {
-  echo "Usage: collect.sh <org>"
+  echo "Usage: collect.sh <org> <filename.yaml>"
 }
 
-if [ $# -lt 1 ]; then
+if [ $# -lt 2 ]; then
   usage >&2
   exit 1
 fi
 
 org=$1
-> actions.yaml
+filename=$2
+truncate -s 0 $filename
 
 echo "Fetching repositories in $org"
 repos=$(gh api /orgs/$org/repos --paginate --jq '.[].full_name')
@@ -27,7 +28,7 @@ for repo in $repos; do
   then
     name=$(echo "$action" | shyaml -q get-value name)
     description=$(echo "$action" | shyaml -q get-value description)
-    echo -e "- name: $name\n  description: $description\n  repo: $repo\n  metadata: $actionfilename\n" >> actions.yaml    
+    echo -e "- name: $name\n  description: $description\n  repo: $repo\n  metadata: $actionfilename\n" >> $filename
   else
     echo "> Unable to fetch action.yaml|yml from the $repo"
     continue
