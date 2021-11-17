@@ -10,7 +10,14 @@ jobs:
      steps:
      - uses: actions/checkout@v2
      - name: Install Dependencies
-       run: npm install
+       run: |
+         npm install
+         pip install shyaml
+
+     - name: Generate list of actions
+       run: |
+         ./collect.sh mivano-actions _data/actions.yaml
+
      - name: Build the site in the jekyll/builder container
        run: |
          docker run \
