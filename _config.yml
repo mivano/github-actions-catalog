@@ -1,5 +1,5 @@
 google_analytics: 
-baseurl: github-actions-catalog
+baseurl: /github-actions-catalog
 title: GitHub Actions Catalog
 description: |
    A collection of GitHub Actions.
@@ -16,6 +16,7 @@ exclude: [
   package.json,
   package-lock.json,
   postcss.config.js,
+  collect.sh,
   readme.md,
 ]
 
