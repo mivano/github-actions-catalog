@@ -19,6 +19,8 @@ jobs:
        run: |
          chmod +x ./collect.sh
          ./collect.sh ${{ env.org }} _data/actions.yaml
+       env:
+         GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
      - name: Build the site in the jekyll/builder container
        run: |
