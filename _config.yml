@@ -1,5 +1,5 @@
 google_analytics: 
-baseurl: ""
+baseurl: github-actions-catalog
 title: GitHub Actions Catalog
 description: |
    A collection of GitHub Actions.
