@@ -6,7 +6,8 @@ jobs:
    build:
 
      runs-on: ubuntu-latest
-
+     env:
+        org: mivano-actions
      steps:
      - uses: actions/checkout@v2
      - name: Install Dependencies
@@ -16,7 +17,8 @@ jobs:
 
      - name: Generate list of actions
        run: |
-         ./collect.sh mivano-actions _data/actions.yaml
+         chmod +x ./collect.sh
+         ./collect.sh ${{ env.org }} _data/actions.yaml
 
      - name: Build the site in the jekyll/builder container
        run: |
