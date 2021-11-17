@@ -15,12 +15,12 @@ layout: default
         </div>
 
         <div class="flex flex-wrap -m-2">
-            {% for action in site.data.actions %}
+            {% for action in site.actions %}
             <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
                 <div class="h-full flex border-gray-800 border p-4 rounded-lg">
 
                     <div class="flex-grow">
-                        <h2 class="text-white title-font font-medium"><a href="https://www.github.com/{{ action.repo }}" target="_blank"> {{ action.name }}</a></h2>
+                        <h2 class="text-white title-font font-medium"><a href="{{ action.url }}"> {{ action.name }}</a></h2>
                         {% if action.author %}                        
                         <p class="leading-relaxed text-xs">By {{action.author }}</p>
                         {% endif %}

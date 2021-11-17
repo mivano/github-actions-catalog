@@ -8,6 +8,7 @@ jobs:
      runs-on: ubuntu-latest
      env:
         org: mivano-actions
+        
      steps:
      - uses: actions/checkout@v2
      - name: Install Dependencies
@@ -18,7 +19,7 @@ jobs:
      - name: Generate list of actions
        run: |
          chmod +x ./collect.sh
-         ./collect.sh ${{ env.org }} ${{ github.workspace }}/_data/actions.yaml
+         ./collect.sh ${{ env.org }} ${{ github.workspace }}/_actions
        env:
          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 

@@ -20,6 +20,12 @@ exclude: [
   readme.md,
 ]
 
+collections:
+  actions:
+    output: true
+    sort_by: name
+    permalink: /:collection/:name
+
 # Defaults
 defaults:
   # _posts
@@ -33,3 +39,10 @@ defaults:
       comments: true
       share: true
       related: true
+  - scope:
+      type: actions
+    values:
+      toc: true
+      no_toc: true
+      layout: "action"
+      comments: true

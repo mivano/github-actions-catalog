@@ -1,7 +1,7 @@
 #!/bin/bash
 
 usage() {
-  echo "Usage: collect.sh <org> <filename.yaml>"
+  echo "Usage: collect.sh <org> <folder>"
 }
 
 if [ $# -lt 2 ]; then
@@ -10,18 +10,17 @@ if [ $# -lt 2 ]; then
 fi
 
 org=$1
-filename=$2
-truncate -s 0 $filename
+folder=$2
 
 echo "Fetching repositories in $org"
-repos=$(gh api /orgs/$org/repos --paginate --jq '.[].full_name')
+repos=$(gh api /orgs/$org/repos --paginate --jq '.[].name')
 for repo in $repos; do
   echo "Collecting $repo"
   actionfilename="action.yml"
-  action=$(gh api -H 'accept: application/vnd.github.v3.raw' "repos/$repo/contents/$actionfilename") || false
+  action=$(gh api -H 'accept: application/vnd.github.v3.raw' "repos/$org/$repo/contents/$actionfilename") || false
   if [ $? -ne 0 ]; then       
    actionfilename="action.yaml"
-   action=$(gh api -H 'accept: application/vnd.github.v3.raw' "repos/$repo/contents/$actionfilename") || false
+   action=$(gh api -H 'accept: application/vnd.github.v3.raw' "repos/$org/$repo/contents/$actionfilename") || false
   fi
 
   if [ "$?" -eq "0" ]
@@ -29,7 +28,10 @@ for repo in $repos; do
     name=$(echo "$action" | shyaml -q get-value name)
     description=$(echo "$action" | shyaml -q get-value description)
     author=$(echo "$action" | shyaml -q get-value author "")
-    echo -e "- name: $name\n  description: $description\n  repo: $repo\n  author: $author\n  metadata: $actionfilename\n" >> $filename
+
+    readme=$(gh api -H 'accept: application/vnd.github.v3.raw' "repos/$org/$repo/readme") || false
+    
+    echo -e "---\nname: $name\ndescription: $description\nrepo: $org/$repo\nauthor: $author\nmetadata: $actionfilename\n---\n\n$readme" > $folder/$repo.md
   else
     echo "> Unable to fetch action.yaml|yml from the $repo"
     continue
