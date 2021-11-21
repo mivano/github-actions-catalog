@@ -1,7 +1,10 @@
-# GitHub Actions marketplace | catalog
+# GitHub Actions marketplace 
 
+Want to run your own internal marketplace of GitHub actions? And use [Tailwind CSS](https://tailwindcss.com/) to style them? Looking for a way to collect all the actions you nicely forked to your own organization? Then this is the place for you! 
 
 ## 👟 Install
+
+Fork this repo to your own organization.
 
 Ensure [Ruby](https://www.ruby-lang.org/en/downloads/) and [node](https://nodejs.org/en/download/) (v12.13+) are installed then setup the project:
 ```
@@ -12,6 +15,10 @@ Configure Jekyll via `_config.yml`:
 - Add your site title and description
 - Add your google analytics ID
 - Add seo config via [jekyll-seo-tag](https://github.com/jekyll/jekyll-seo-tag) docs
+
+You can change the files in the `_layout` folder to suit your needs.
+
+In the workflow file (`.github/workflows/build.yml`) there is an environment variable called `org`. Set this to the name of your organization which contains your forked GitHub actions. The bash script will use the GitHub CLI to find all the actions and read the metadata. The output will be placed inside the `_actions` folder. If you want more control, then adjust the script or run the script locally and adjust the markdown files instead.
 
 ## 🍕 Develop
 

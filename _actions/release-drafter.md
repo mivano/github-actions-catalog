@@ -4,6 +4,40 @@ description: Drafts your next release notes as pull requests are merged into mas
 repo: mivano-actions/release-drafter
 author: 
 metadata: action.yml
+versions:
+ - v1.0.0
+ - v2.0.0
+ - v2.0.1
+ - v2.0.2
+ - v2.0.3
+ - v2.0.4
+ - v2.1.0
+ - v2.2.0
+ - v2.2.1
+ - v2.2.2
+ - v3.0.0
+ - v4.0.0
+ - v4.1.0
+ - v5.0.0
+ - v5.1.0
+ - v5.1.1
+ - v5.2.0
+ - v5.3.0
+ - v5.3.1
+ - v5.4.0
+ - v5.5.0
+ - v5.6.0
+ - v5.6.1
+ - v5.7.0
+ - v5.8.0
+ - v5.9.0
+ - v5.11.0
+ - v5.12.0
+ - v5.12.1
+ - v5.13.0
+ - v5.14.0
+ - v5.15.0
+
 ---
 
 <h1 align="center">

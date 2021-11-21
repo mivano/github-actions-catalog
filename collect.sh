@@ -31,7 +31,14 @@ for repo in $repos; do
 
     readme=$(gh api -H 'accept: application/vnd.github.v3.raw' "repos/$org/$repo/readme") || false
     
-    echo -e "---\nname: $name\ndescription: $description\nrepo: $org/$repo\nauthor: $author\nmetadata: $actionfilename\n---\n\n$readme" > $folder/$repo.md
+    tags=$(gh api /repos/$org/$repo/git/refs/tags --paginate --jq .[].ref)
+    versions=""
+    for tag in $tags; do
+      tag=$(echo $tag | cut -d/ -f3)
+      versions+=" - $tag\n"     
+    done
+
+    echo -e "---\nname: $name\ndescription: $description\nrepo: $org/$repo\nauthor: $author\nmetadata: $actionfilename\nversions:\n$versions---\n\n$readme" > $folder/$repo.md
   else
     echo "> Unable to fetch action.yaml|yml from the $repo"
     continue

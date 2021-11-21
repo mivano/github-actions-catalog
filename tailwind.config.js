@@ -36,7 +36,7 @@ module.exports = {
                 'dark-alternate': '#212224',
                 'dark-200': '#1F2129',
                 'dark-300': '#2B2D33',
-                'gdbc-orange': '#ef8300'
+                'orange': '#ef8300'
             },
             typography(theme) {
                 return {
