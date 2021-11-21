@@ -2,6 +2,8 @@
 
 Want to run your own internal marketplace of GitHub actions? And use [Tailwind CSS](https://tailwindcss.com/) to style them? Looking for a way to collect all the actions you nicely forked to your own organization? Then this is the place for you! 
 
+For a demo, see the [GitHub pages](https://mivano.github.io/github-actions-catalog/) site created from this repo.
+
 ## 👟 Install
 
 Fork this repo to your own organization.
@@ -44,7 +46,7 @@ Deploy statically (e.g. GitHub Pages) with the following build settings:
 - Command: `npm run build`
 - Directory: `_site`
 
-There is a workflow file which does all this as tailwind needs to be precompiled.
+There is a workflow file which does all this as tailwind needs to be precompiled. This will push the site output to GitHub pages branch. Configure this inside the settings to be published. If you run this from a folder (so like https://mivano.github.io/github-actions-catalog/), then make sure to set the `baseurl` property in the `_config.yml` file to `/github-actions-catalog`. if you run this from a domain, then you can leave this empty.
 
 ---
 

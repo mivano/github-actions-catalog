@@ -20,7 +20,7 @@ layout: default
                 <div class="h-full flex border-gray-800 border p-4 rounded-lg">
 
                     <div class="flex-grow">
-                        <h2 class="text-white title-font font-medium"><a href="{{ action.url }}"> {{ action.name }}</a></h2>
+                        <h2 class="text-white title-font font-medium"><a href="{{ action.url | relative_url }}"> {{ action.name }}</a></h2>
                         {% if action.author %}                        
                         <p class="leading-relaxed text-xs">By {{action.author }}</p>
                         {% endif %}
