@@ -10,7 +10,7 @@ layout: default
             </div>
             <div class="flex flex-wrap sm:flex-row flex-col py-6 mb-12">
                 <h1 class="sm:w-2/5 text-white font-medium title-font text-2xl mb-2 sm:mb-0">Actions</h1>
-                <p class="sm:w-3/5 leading-relaxed text-base sm:pl-10 pl-0"></p>
+                <p class="sm:w-3/5 leading-relaxed text-base sm:pl-10 pl-0">Below you will find the organization approved GitHub Actions you can use in your workflow.</p>
             </div>
         </div>
 
