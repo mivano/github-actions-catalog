@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en-US" class="dark">
+
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+<link rel="stylesheet" href="/github-actions-catalog/dist/index.css">
+<link rel="shortcut icon" type="image/png" href="/github-actions-catalog/assets/favicon.ico">
+
+<title>GitHub Actions Catalog - Release Drafter</title>
+<meta itemprop="description" name="description"
+    content="Drafts your next release notes as pull requests are merged into master." />
+
+<!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Release Drafter | GitHub Actions Catalog</title>
+<meta name="generator" content="Jekyll v4.2.0" />
+<meta property="og:title" content="Release Drafter" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Drafts your next release notes as pull requests are merged into master." />
+<meta property="og:description" content="Drafts your next release notes as pull requests are merged into master." />
+<link rel="canonical" href="/github-actions-catalog/actions/release-drafter" />
+<meta property="og:url" content="/github-actions-catalog/actions/release-drafter" />
+<meta property="og:site_name" content="GitHub Actions Catalog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-11-21T17:09:14-06:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Release Drafter" />
+<script type="application/ld+json">
+{"@type":"BlogPosting","headline":"Release Drafter","description":"Drafts your next release notes as pull requests are merged into master.","dateModified":"2021-11-21T17:09:14-06:00","url":"/github-actions-catalog/actions/release-drafter","datePublished":"2021-11-21T17:09:14-06:00","mainEntityOfPage":{"@type":"WebPage","@id":"/github-actions-catalog/actions/release-drafter"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+        
+        
+
+    </head>
+
+    <body class="antialiased text-gray-900 bg-gray-900 dark:text-gray-100 dark:bg-gray-900 min-h-screen">
+        <header>
+    
+    <a href="/github-actions-catalog" class="flex items-center m-5 text-xl hover:underline">
+        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd"
+                d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
+                clip-rule="evenodd"></path>
+        </svg>
+        <span>back</span>
+    </a>
+    
+</header>
+
+<section class="text-gray-400 bg-gray-900 body-font">
+    <div class="container px-5 py-24 mx-auto">
+        <div class="flex mb-4">
+            <div class="w-3/4 h-12 h-auto">
+                <h3 class="text-mono text-sm">GitHub Action</h3>
+                <h1 class="text-lg mb-4 text-indigo-400 font-semibold">Release Drafter</h1>
+                <div class="flex flex-items-center flex-justify-center flex-md-justify-start">
+
+                    <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16"
+                        data-view-component="true" class="inline-block fill-current text-white ">
+                        <path fill-rule="evenodd"
+                            d="M2.5 7.775V2.75a.25.25 0 01.25-.25h5.025a.25.25 0 01.177.073l6.25 6.25a.25.25 0 010 .354l-5.025 5.025a.25.25 0 01-.354 0l-6.25-6.25a.25.25 0 01-.073-.177zm-1.5 0V2.75C1 1.784 1.784 1 2.75 1h5.025c.464 0 .91.184 1.238.513l6.25 6.25a1.75 1.75 0 010 2.474l-5.026 5.026a1.75 1.75 0 01-2.474 0l-6.25-6.25A1.75 1.75 0 011 7.775zM6 5a1 1 0 100 2 1 1 0 000-2z">
+                        </path>
+                    </svg>
+                    <span class="mx-2">v5.15.0</span>
+                    <span class="rounded-xl px-2 inline-block border-green-600 border-2 text-green-600 mx-2">Latest
+                        version</span>
+                </div>
+
+
+
+            </div>
+            <div class="w-1/4  h-12 h-auto">
+                <h5 class="font-mono text-normal mb-2">Installation</h5>
+                <p class="text-sm">Copy and paste the following snippet into your <span class="font-mono">.yml</span>
+                    file.</p>
+                <p class="rounded p-2 font-mono inline-block text-xs bg-gray-400 text-black">
+                    -&nbsp;name: Release Drafter<br>
+                    &nbsp;&nbsp;uses: mivano-actions/release-drafter@v5.15.0
+                </p>
+            </div>
+        </div>
+        <div class="flex mb-4">
+            <div class="w-3/4  h-12  h-auto">
+                <article class="prose dark:prose-dark prose-sm sm:prose lg:prose-lg xl:prose-xl mx-auto">
+                    <h1 align="center">
+  <img src="design/logo.svg" alt="Release Drafter Logo" width="450" />
+</h1>
+
+<p align="center">Drafts your next release notes as pull requests are merged into master. Built with <a href="https://github.com/probot/probot">Probot</a>.</p>
+
+<hr />
+
+<h2 id="usage">Usage</h2>
+
+<p>You can use the <a href="https://github.com/marketplace/actions/release-drafter">Release Drafter GitHub Action</a> in a <a href="https://help.github.com/en/articles/about-github-actions">GitHub Actions Workflow</a> by configuring a YAML-based workflow file, e.g. <code class="language-plaintext highlighter-rouge">.github/workflows/release-drafter.yml</code>, with the following:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">name</span><span class="pi">:</span> <span class="s">Release Drafter</span>
+
+<span class="na">on</span><span class="pi">:</span>
+  <span class="na">push</span><span class="pi">:</span>
+    <span class="c1"># branches to consider in the event; optional, defaults to all</span>
+    <span class="na">branches</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">master</span>
+  <span class="c1"># pull_request event is required only for autolabeler</span>
+  <span class="na">pull_request</span><span class="pi">:</span>
+    <span class="c1"># Only following types are handled by the action, but one can default to all as well</span>
+    <span class="na">types</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">opened</span><span class="pi">,</span> <span class="nv">reopened</span><span class="pi">,</span> <span class="nv">synchronize</span><span class="pi">]</span>
+
+<span class="na">jobs</span><span class="pi">:</span>
+  <span class="na">update_release_draft</span><span class="pi">:</span>
+    <span class="na">runs-on</span><span class="pi">:</span> <span class="s">ubuntu-latest</span>
+    <span class="na">steps</span><span class="pi">:</span>
+      <span class="c1"># (Optional) GitHub Enterprise requires GHE_HOST variable set</span>
+      <span class="c1">#- name: Set GHE_HOST</span>
+      <span class="c1">#  run: |</span>
+      <span class="c1">#    echo "GHE_HOST=${GITHUB_SERVER_URL##https:\/\/}" &gt;&gt; $GITHUB_ENV</span>
+
+      <span class="c1"># Drafts your next Release notes as Pull Requests are merged into "master"</span>
+      <span class="pi">-</span> <span class="na">uses</span><span class="pi">:</span> <span class="s">release-drafter/release-drafter@v5</span>
+        <span class="c1"># (Optional) specify config name to use, relative to .github/. Default: release-drafter.yml</span>
+        <span class="c1"># with:</span>
+        <span class="c1">#   config-name: my-config.yml</span>
+        <span class="c1">#   disable-autolabeler: true</span>
+        <span class="na">env</span><span class="pi">:</span>
+          <span class="na">GITHUB_TOKEN</span><span class="pi">:</span> <span class="s">$</span>
+</code></pre></div></div>
+
+<p>If you’re unable to use GitHub Actions, you can use the Release Drafter GitHub App. Please refer to the <a href="docs/github-app.md">Release Drafter GitHub App documentation</a> for more information.</p>
+
+<h2 id="configuration">Configuration</h2>
+
+<p>Once you’ve added Release Drafter to your repository, it must be enabled by adding a <code class="language-plaintext highlighter-rouge">.github/release-drafter.yml</code> configuration file to each repository. The configuration file <strong>must</strong> reside in your default branch, no other configurations will be accepted.</p>
+
+<h3 id="example">Example</h3>
+
+<p>For example, take the following <code class="language-plaintext highlighter-rouge">.github/release-drafter.yml</code> file in a repository:</p>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">template</span><span class="pi">:</span> <span class="pi">|</span>
+  <span class="s">## What’s Changed</span>
+
+  <span class="s">$CHANGES</span>
+</code></pre></div></div>
+
+<p>As pull requests are merged, a draft release is kept up-to-date listing the changes, ready to publish when you’re ready:</p>
+
+<p><img src="design/screenshot.png" alt="Screenshot of generated draft release" width="586" /></p>
+
+<p>The following is a more complicated configuration, which categorises the changes into headings, and automatically suggests the next version number:</p>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">name-template</span><span class="pi">:</span> <span class="s1">'</span><span class="s">v$RESOLVED_VERSION</span><span class="nv"> </span><span class="s">🌈'</span>
+<span class="na">tag-template</span><span class="pi">:</span> <span class="s1">'</span><span class="s">v$RESOLVED_VERSION'</span>
+<span class="na">categories</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s1">'</span><span class="s">🚀</span><span class="nv"> </span><span class="s">Features'</span>
+    <span class="na">labels</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s1">'</span><span class="s">feature'</span>
+      <span class="pi">-</span> <span class="s1">'</span><span class="s">enhancement'</span>
+  <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s1">'</span><span class="s">🐛</span><span class="nv"> </span><span class="s">Bug</span><span class="nv"> </span><span class="s">Fixes'</span>
+    <span class="na">labels</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s1">'</span><span class="s">fix'</span>
+      <span class="pi">-</span> <span class="s1">'</span><span class="s">bugfix'</span>
+      <span class="pi">-</span> <span class="s1">'</span><span class="s">bug'</span>
+  <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s1">'</span><span class="s">🧰</span><span class="nv"> </span><span class="s">Maintenance'</span>
+    <span class="na">label</span><span class="pi">:</span> <span class="s1">'</span><span class="s">chore'</span>
+<span class="na">change-template</span><span class="pi">:</span> <span class="s1">'</span><span class="s">-</span><span class="nv"> </span><span class="s">$TITLE</span><span class="nv"> </span><span class="s">@$AUTHOR</span><span class="nv"> </span><span class="s">(#$NUMBER)'</span>
+<span class="na">change-title-escapes</span><span class="pi">:</span> <span class="s1">'</span><span class="s">\&lt;*_&amp;'</span> <span class="c1"># You can add # and @ to disable mentions, and add ` to disable code blocks.</span>
+<span class="na">version-resolver</span><span class="pi">:</span>
+  <span class="na">major</span><span class="pi">:</span>
+    <span class="na">labels</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s1">'</span><span class="s">major'</span>
+  <span class="na">minor</span><span class="pi">:</span>
+    <span class="na">labels</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s1">'</span><span class="s">minor'</span>
+  <span class="na">patch</span><span class="pi">:</span>
+    <span class="na">labels</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s1">'</span><span class="s">patch'</span>
+  <span class="na">default</span><span class="pi">:</span> <span class="s">patch</span>
+<span class="na">template</span><span class="pi">:</span> <span class="pi">|</span>
+  <span class="s">## Changes</span>
+
+  <span class="s">$CHANGES</span>
+</code></pre></div></div>
+
+<h2 id="configuration-options">Configuration Options</h2>
+
+<p>You can configure Release Drafter using the following key in your <code class="language-plaintext highlighter-rouge">.github/release-drafter.yml</code> file:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Key</th>
+      <th>Required</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">template</code></td>
+      <td>Required</td>
+      <td>The template for the body of the draft release. Use <a href="#template-variables">template variables</a> to insert values.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">category-template</code></td>
+      <td>Optional</td>
+      <td>The template to use for each category. Use <a href="#category-template-variables">category template variables</a> to insert values. Default: <code class="language-plaintext highlighter-rouge">"## $TITLE"</code>.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">name-template</code></td>
+      <td>Optional</td>
+      <td>The template for the name of the draft release. For example: <code class="language-plaintext highlighter-rouge">"v$NEXT_PATCH_VERSION"</code>.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">tag-template</code></td>
+      <td>Optional</td>
+      <td>The template for the tag of the draft release. For example: <code class="language-plaintext highlighter-rouge">"v$NEXT_PATCH_VERSION"</code>.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">version-template</code></td>
+      <td>Optional</td>
+      <td>The template to use when calculating the next version number for the release. Useful for projects that don’t use semantic versioning. Default: <code class="language-plaintext highlighter-rouge">"$MAJOR.$MINOR.$PATCH"</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">change-template</code></td>
+      <td>Optional</td>
+      <td>The template to use for each merged pull request. Use <a href="#change-template-variables">change template variables</a> to insert values. Default: <code class="language-plaintext highlighter-rouge">"* $TITLE (#$NUMBER) @$AUTHOR"</code>.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">change-title-escapes</code></td>
+      <td>Optional</td>
+      <td>Characters to escape in <code class="language-plaintext highlighter-rouge">$TITLE</code> when inserting into <code class="language-plaintext highlighter-rouge">change-template</code> so that they are not interpreted as Markdown format characters. Default: <code class="language-plaintext highlighter-rouge">""</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">no-changes-template</code></td>
+      <td>Optional</td>
+      <td>The template to use for when there’s no changes. Default: <code class="language-plaintext highlighter-rouge">"* No changes"</code>.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">references</code></td>
+      <td>Optional</td>
+      <td>The references to listen for configuration updates to <code class="language-plaintext highlighter-rouge">.github/release-drafter.yml</code>. Refer to <a href="#references">References</a> to learn more about this</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">categories</code></td>
+      <td>Optional</td>
+      <td>Categorize pull requests using labels. Refer to <a href="#categorize-pull-requests">Categorize Pull Requests</a> to learn more about this option.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">exclude-labels</code></td>
+      <td>Optional</td>
+      <td>Exclude pull requests using labels. Refer to <a href="#exclude-pull-requests">Exclude Pull Requests</a> to learn more about this option.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">include-labels</code></td>
+      <td>Optional</td>
+      <td>Include only the specified pull requests using labels. Refer to <a href="#include-pull-requests">Include Pull Requests</a> to learn more about this option.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">exclude-contributors</code></td>
+      <td>Optional</td>
+      <td>Exclude specific usernames from the generated <code class="language-plaintext highlighter-rouge">$CONTRIBUTORS</code> variable. Refer to <a href="#exclude-contributors">Exclude Contributors</a> to learn more about this option.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">no-contributors-template</code></td>
+      <td>Optional</td>
+      <td>The template to use for <code class="language-plaintext highlighter-rouge">$CONTRIBUTORS</code> when there’s no contributors to list. Default: <code class="language-plaintext highlighter-rouge">"No contributors"</code>.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">replacers</code></td>
+      <td>Optional</td>
+      <td>Search and replace content in the generated changelog body. Refer to <a href="#replacers">Replacers</a> to learn more about this option.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">sort-by</code></td>
+      <td>Optional</td>
+      <td>Sort changelog by merged_at or title. Can be one of: <code class="language-plaintext highlighter-rouge">merged_at</code>, <code class="language-plaintext highlighter-rouge">title</code>. Default: <code class="language-plaintext highlighter-rouge">merged_at</code>.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">sort-direction</code></td>
+      <td>Optional</td>
+      <td>Sort changelog in ascending or descending order. Can be one of: <code class="language-plaintext highlighter-rouge">ascending</code>, <code class="language-plaintext highlighter-rouge">descending</code>. Default: <code class="language-plaintext highlighter-rouge">descending</code>.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">prerelease</code></td>
+      <td>Optional</td>
+      <td>Mark the draft release as pre-release. Default <code class="language-plaintext highlighter-rouge">false</code>.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">version-resolver</code></td>
+      <td>Optional</td>
+      <td>Adjust the <code class="language-plaintext highlighter-rouge">$RESOLVED_VERSION</code> variable using labels. Refer to <a href="#version-resolver">Version Resolver</a> to learn more about this</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">filter-by-commitish</code></td>
+      <td>Optional</td>
+      <td>Filter previous releases to consider only the target branch of the release. Default: <code class="language-plaintext highlighter-rouge">false</code>.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">commitish</code></td>
+      <td>Optional</td>
+      <td>Specify the target branch of the release. Default: the default branch of the repo.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Release Drafter also supports <a href="https://github.com/probot/probot-config">Probot Config</a>, if you want to store your configuration files in a central repository. This allows you to share configurations between projects, and create a organization-wide configuration file by creating a repository named <code class="language-plaintext highlighter-rouge">.github</code> with the file <code class="language-plaintext highlighter-rouge">.github/release-drafter.yml</code>.</p>
+
+<h2 id="template-variables">Template Variables</h2>
+
+<p>You can use any of the following variables in your <code class="language-plaintext highlighter-rouge">template</code>:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Variable</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">$CHANGES</code></td>
+      <td>The markdown list of pull requests that have been merged.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">$CONTRIBUTORS</code></td>
+      <td>A comma separated list of contributors to this release (pull request authors, commit authors, and commit committers).</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">$PREVIOUS_TAG</code></td>
+      <td>The previous releases’s tag.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="category-template-variables">Category Template Variables</h2>
+
+<p>You can use any of the following variables in <code class="language-plaintext highlighter-rouge">category-template</code>:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Variable</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">$TITLE</code></td>
+      <td>The category title, e.g. <code class="language-plaintext highlighter-rouge">Features</code>.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="next-version-variables">Next Version Variables</h2>
+
+<p>You can use any of the following variables in your <code class="language-plaintext highlighter-rouge">template</code>, <code class="language-plaintext highlighter-rouge">name-template</code> and <code class="language-plaintext highlighter-rouge">tag-template</code>:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Variable</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">$NEXT_PATCH_VERSION</code></td>
+      <td>The next patch version number. For example, if the last tag or release was <code class="language-plaintext highlighter-rouge">v1.2.3</code>, the value would be <code class="language-plaintext highlighter-rouge">v1.2.4</code>. This is the most commonly used value.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">$NEXT_MINOR_VERSION</code></td>
+      <td>The next minor version number. For example, if the last tag or release was <code class="language-plaintext highlighter-rouge">v1.2.3</code>, the value would be <code class="language-plaintext highlighter-rouge">v1.3.0</code>.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">$NEXT_MAJOR_VERSION</code></td>
+      <td>The next major version number. For example, if the last tag or release was <code class="language-plaintext highlighter-rouge">v1.2.3</code>, the value would be <code class="language-plaintext highlighter-rouge">v2.0.0</code>.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">$RESOLVED_VERSION</code></td>
+      <td>The next resolved version number, based on GitHub labels. Refer to <a href="#version-resolver">Version Resolver</a> to learn more about this.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="version-template-variables">Version Template Variables</h2>
+
+<p>You can use any of the following variables in <code class="language-plaintext highlighter-rouge">version-template</code> to format the <code class="language-plaintext highlighter-rouge">$NEXT_{PATCH,MINOR,MAJOR}_VERSION</code> variables:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Variable</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">$PATCH</code></td>
+      <td>The patch version number.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">$MINOR</code></td>
+      <td>The minor version number.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">$MAJOR</code></td>
+      <td>The major version number.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">$COMPLETE</code></td>
+      <td>The complete version string (including any prerelease info).</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="version-resolver">Version Resolver</h2>
+
+<p>With the <code class="language-plaintext highlighter-rouge">version-resolver</code> option version number incrementing can be resolved automatically based on labels of individual pull requests. Append the following to your <code class="language-plaintext highlighter-rouge">.github/release-drafter.yml</code> file:</p>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">version-resolver</span><span class="pi">:</span>
+  <span class="na">major</span><span class="pi">:</span>
+    <span class="na">labels</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s1">'</span><span class="s">major'</span>
+  <span class="na">minor</span><span class="pi">:</span>
+    <span class="na">labels</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s1">'</span><span class="s">minor'</span>
+  <span class="na">patch</span><span class="pi">:</span>
+    <span class="na">labels</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s1">'</span><span class="s">patch'</span>
+  <span class="na">default</span><span class="pi">:</span> <span class="s">patch</span>
+</code></pre></div></div>
+
+<p>The above config controls the output of the <code class="language-plaintext highlighter-rouge">$RESOLVED_VERSION</code> variable.</p>
+
+<p>If a pull requests is found with the label <code class="language-plaintext highlighter-rouge">major</code>/<code class="language-plaintext highlighter-rouge">minor</code>/<code class="language-plaintext highlighter-rouge">patch</code>, the corresponding version key will be incremented from a semantic version. The maximum out of major, minor and patch found in any of the pull requests will be used to increment the version number. If no pull requests are found with the assigned labels, the <code class="language-plaintext highlighter-rouge">default</code> will be assigned.</p>
+
+<h2 id="change-template-variables">Change Template Variables</h2>
+
+<p>You can use any of the following variables in <code class="language-plaintext highlighter-rouge">change-template</code>:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Variable</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">$NUMBER</code></td>
+      <td>The number of the pull request, e.g. <code class="language-plaintext highlighter-rouge">42</code>.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">$TITLE</code></td>
+      <td>The title of the pull request, e.g. <code class="language-plaintext highlighter-rouge">Add alien technology</code>. Any characters excluding @ and # matching <code class="language-plaintext highlighter-rouge">change-title-escapes</code> will be prepended with a backslash so that they will appear verbatim instead of being interpreted as markdown format characters. @s and #s if present in <code class="language-plaintext highlighter-rouge">change-title-escapes</code> will be appended with an HTML comment so that they don’t become mentions.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">$AUTHOR</code></td>
+      <td>The pull request author’s username, e.g. <code class="language-plaintext highlighter-rouge">gracehopper</code>.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">$BODY</code></td>
+      <td>The body of the pull request e.g. <code class="language-plaintext highlighter-rouge">Fixed spelling mistake</code>.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">$URL</code></td>
+      <td>The URL of the pull request e.g. <code class="language-plaintext highlighter-rouge">https://github.com/octocat/repo/pull/42</code>.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">$BASE_REF_NAME</code></td>
+      <td>The base name of of the base Ref associated with the pull request e.g. <code class="language-plaintext highlighter-rouge">master</code>.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">$HEAD_REF_NAME</code></td>
+      <td>The head name of the head Ref associated with the pull request e.g. <code class="language-plaintext highlighter-rouge">my-bug-fix</code>.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="references">References</h2>
+
+<p><strong>Note</strong>: This is only revelant for GitHub app users as <code class="language-plaintext highlighter-rouge">references</code> is ignored when running as GitHub action due to GitHub workflows more powerful <a href="https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions#on"><code class="language-plaintext highlighter-rouge">on</code> conditions</a></p>
+
+<p>References takes an list and accepts strings and regex.
+If none are specified, we default to the repository’s default branch usually master.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">references</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s">master</span>
+  <span class="pi">-</span> <span class="s">v.+</span>
+</code></pre></div></div>
+
+<p>Currently matching against any <code class="language-plaintext highlighter-rouge">ref/heads/</code> and <code class="language-plaintext highlighter-rouge">ref/tags/</code> references behind the scene</p>
+
+<h2 id="categorize-pull-requests">Categorize Pull Requests</h2>
+
+<p>With the <code class="language-plaintext highlighter-rouge">categories</code> option you can categorize pull requests in release notes using labels. For example, append the following to your <code class="language-plaintext highlighter-rouge">.github/release-drafter.yml</code> file:</p>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">categories</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s1">'</span><span class="s">🚀</span><span class="nv"> </span><span class="s">Features'</span>
+    <span class="na">label</span><span class="pi">:</span> <span class="s1">'</span><span class="s">feature'</span>
+  <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s1">'</span><span class="s">🐛</span><span class="nv"> </span><span class="s">Bug</span><span class="nv"> </span><span class="s">Fixes'</span>
+    <span class="na">labels</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s1">'</span><span class="s">fix'</span>
+      <span class="pi">-</span> <span class="s1">'</span><span class="s">bugfix'</span>
+      <span class="pi">-</span> <span class="s1">'</span><span class="s">bug'</span>
+</code></pre></div></div>
+
+<p>Pull requests with the label “feature” or “fix” will now be grouped together:</p>
+
+<p><img src="design/screenshot-2.png" alt="Screenshot of generated draft release with categories" width="586" /></p>
+
+<p>Adding such labels to your PRs can be automated by using the embedded Autolabeler functionality (see below),
+<a href="https://github.com/TimonVS/pr-labeler-action">PR Labeler</a> or <a href="https://github.com/probot/autolabeler">Probot Auto Labeler</a>.</p>
+
+<h2 id="exclude-pull-requests">Exclude Pull Requests</h2>
+
+<p>With the <code class="language-plaintext highlighter-rouge">exclude-labels</code> option you can exclude pull requests from the release notes using labels. For example, append the following to your <code class="language-plaintext highlighter-rouge">.github/release-drafter.yml</code> file:</p>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">exclude-labels</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s1">'</span><span class="s">skip-changelog'</span>
+</code></pre></div></div>
+
+<p>Pull requests with the label “skip-changelog” will now be excluded from the release draft.</p>
+
+<h2 id="include-pull-requests">Include Pull Requests</h2>
+
+<p>With the <code class="language-plaintext highlighter-rouge">include-labels</code> option you can specify pull requests from the release notes using labels. Only pull requests that have the configured labels will be included in the pull request. For example, append the following to your <code class="language-plaintext highlighter-rouge">.github/release-drafter.yml</code> file:</p>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">include-labels</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s1">'</span><span class="s">app-foo'</span>
+</code></pre></div></div>
+
+<p>Pull requests with the label “app-foo” will be the only pull requests included in the release draft.</p>
+
+<h2 id="exclude-contributors">Exclude Contributors</h2>
+
+<p>By default, the <code class="language-plaintext highlighter-rouge">$CONTRIBUTORS</code> variable will contain the names or usernames of all the contributors of a release. The <code class="language-plaintext highlighter-rouge">exclude-contributors</code> option allows you to remove certain usernames from that list. This can be useful if don’t wish to include yourself, to better highlight only the third-party contributions.</p>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">exclude-contributors</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s1">'</span><span class="s">myusername'</span>
+</code></pre></div></div>
+
+<h2 id="replacers">Replacers</h2>
+
+<p>You can search and replace content in the generated changelog body, using regular expressions, with the <code class="language-plaintext highlighter-rouge">replacers</code> option. Each replacer is applied in order.</p>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">replacers</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">search</span><span class="pi">:</span> <span class="s1">'</span><span class="s">/CVE-(\d{4})-(\d+)/g'</span>
+    <span class="na">replace</span><span class="pi">:</span> <span class="s1">'</span><span class="s">https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-$1-$2'</span>
+  <span class="pi">-</span> <span class="na">search</span><span class="pi">:</span> <span class="s1">'</span><span class="s">myname'</span>
+    <span class="na">replace</span><span class="pi">:</span> <span class="s1">'</span><span class="s">My</span><span class="nv"> </span><span class="s">Name'</span>
+</code></pre></div></div>
+
+<h2 id="autolabeler">Autolabeler</h2>
+
+<p>You can add automatically a label into a pull request, with the <code class="language-plaintext highlighter-rouge">autolabeler</code> option. Available matchers are <code class="language-plaintext highlighter-rouge">files</code> (glob), <code class="language-plaintext highlighter-rouge">branch</code> (regex), <code class="language-plaintext highlighter-rouge">title</code> (regex) and <code class="language-plaintext highlighter-rouge">body</code> (regex).
+Matchers are evaluated independently; the label will be set if at least one of the matchers meets the criteria.</p>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">autolabeler</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">label</span><span class="pi">:</span> <span class="s1">'</span><span class="s">chore'</span>
+    <span class="na">files</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s1">'</span><span class="s">*.md'</span>
+    <span class="na">branch</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s1">'</span><span class="s">/docs{0,1}\/.+/'</span>
+  <span class="pi">-</span> <span class="na">label</span><span class="pi">:</span> <span class="s1">'</span><span class="s">bug'</span>
+    <span class="na">branch</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s1">'</span><span class="s">/fix\/.+/'</span>
+    <span class="na">title</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s1">'</span><span class="s">/fix/i'</span>
+  <span class="pi">-</span> <span class="na">label</span><span class="pi">:</span> <span class="s1">'</span><span class="s">enhancement'</span>
+    <span class="na">branch</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s1">'</span><span class="s">/feature\/.+/'</span>
+    <span class="na">body</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s1">'</span><span class="s">/JIRA-[0-9]{1,4}/'</span>
+</code></pre></div></div>
+
+<h2 id="projects-that-dont-use-semantic-versioning">Projects that don’t use Semantic Versioning</h2>
+
+<p>If your project doesn’t follow <a href="https://semver.org">Semantic Versioning</a> you can still use Release Drafter, but you may want to set the <code class="language-plaintext highlighter-rouge">version-template</code> option to customize how the <code class="language-plaintext highlighter-rouge">$NEXT_{PATCH,MINOR,MAJOR}_VERSION</code> environment variables are generated.</p>
+
+<p>For example, if your project doesn’t use patch version numbers, you can set <code class="language-plaintext highlighter-rouge">version-template</code> to <code class="language-plaintext highlighter-rouge">$MAJOR.$MINOR</code>. If the current release is version 1.0, then <code class="language-plaintext highlighter-rouge">$NEXT_MINOR_VERSION</code> will be <code class="language-plaintext highlighter-rouge">1.1</code>.</p>
+
+<h2 id="action-inputs">Action Inputs</h2>
+
+<p>The Release Drafter GitHub Action accepts a number of optional inputs directly in your workflow configuration. These will typically override default behavior specified in your <code class="language-plaintext highlighter-rouge">release-drafter.yml</code> config.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Input</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">config-name</code></td>
+      <td>If your workflow requires multiple release-drafter configs it be helpful to override the config-name. The config should still be located inside <code class="language-plaintext highlighter-rouge">.github</code> as that’s where we are looking for config files.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">name</code></td>
+      <td>The name that will be used in the GitHub release that’s created or updated. This will override any <code class="language-plaintext highlighter-rouge">name-template</code> specified in your <code class="language-plaintext highlighter-rouge">release-drafter.yml</code> if defined.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">tag</code></td>
+      <td>The tag name to be associated with the GitHub release that’s created or updated. This will override any <code class="language-plaintext highlighter-rouge">tag-template</code> specified in your <code class="language-plaintext highlighter-rouge">release-drafter.yml</code> if defined.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">version</code></td>
+      <td>The version to be associated with the GitHub release that’s created or updated. This will override any version calculated by the release-drafter.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">publish</code></td>
+      <td>A boolean indicating whether the release being created or updated should be immediately published. This may be useful if the output of a previous workflow step determines that a new version of your project has been (or will be) released, as with <a href="https://github.com/salsify/action-detect-and-tag-new-version"><code class="language-plaintext highlighter-rouge">salsify/action-detect-and-tag-new-version</code></a>.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">prerelease</code></td>
+      <td>A boolean indicating whether the release being created or updated is a prerelease.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">commitish</code></td>
+      <td>A string specifying the target branch for the release being created.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="action-outputs">Action Outputs</h2>
+
+<p>The Release Drafter GitHub Action sets a couple of outputs which can be used as inputs to other Actions in the workflow (<a href="https://github.com/actions/upload-release-asset#example-workflow---upload-a-release-asset">example</a>).</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Output</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">id</code></td>
+      <td>The ID of the release that was created or updated.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">name</code></td>
+      <td>The name of this release.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">tag_name</code></td>
+      <td>The name of the tag associated with this release.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">body</code></td>
+      <td>The body of the drafted release, useful if it needs to be included in files.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">html_url</code></td>
+      <td>The URL users can navigate to in order to view the release. i.e. <code class="language-plaintext highlighter-rouge">https://github.com/octocat/Hello-World/releases/v1.0.0</code>.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">upload_url</code></td>
+      <td>The URL for uploading assets to the release, which could be used by GitHub Actions for additional uses, for example the <a href="https://www.github.com/actions/upload-release-asset"><code class="language-plaintext highlighter-rouge">@actions/upload-release-asset GitHub Action</code></a>.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="developing">Developing</h2>
+
+<p>If you have Node v10+ installed locally, you can run the tests, and a local app, using the following commands:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Install dependencies</span>
+yarn
+
+<span class="c"># Run the tests</span>
+npm <span class="nb">test</span>
+
+<span class="c"># Run the app locally</span>
+npm run dev
+</code></pre></div></div>
+
+<p>Once you’ve started the app, visit <code class="language-plaintext highlighter-rouge">localhost:3000</code> and you’ll get <a href="https://probot.github.io/docs/development/#configuring-a-github-app">step-by-step instructions</a> for installing it in your GitHub account so you can start pushing commits and testing it locally.</p>
+
+<p>If you don’t have Node installed, you can use <a href="https://docs.docker.com/compose/">Docker Compose</a>:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Run the tests</span>
+docker-compose run <span class="nt">--rm</span> app npm <span class="nb">test</span>
+</code></pre></div></div>
+
+<h2 id="contributing">Contributing</h2>
+
+<p>Third-party contributions are welcome! 🙏🏼 See <a href="CONTRIBUTING.md">CONTRIBUTING.md</a> for step-by-step instructions.</p>
+
+<p>If you need help or have a question, let me know via a GitHub issue.</p>
+
+<h2 id="deployment">Deployment</h2>
+
+<p>If you want to deploy your own copy of Release Drafter, follow the <a href="https://probot.github.io/docs/deployment/">Probot Deployment Guide</a>.</p>
+
+<h2 id="releasing">Releasing</h2>
+
+<p>Run the following command:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git checkout master <span class="o">&amp;&amp;</span> git pull <span class="o">&amp;&amp;</span> npm version <span class="o">[</span>major | minor | patch]
+</code></pre></div></div>
+
+<p>The command does the following:</p>
+
+<ul>
+  <li>Ensures you’re on master and don’t have local, un-commited changes</li>
+  <li>Bumps the version number in <a href="package.json">package.json</a> based on major, minor or patch</li>
+  <li>Runs the <code class="language-plaintext highlighter-rouge">postversion</code> npm script in <a href="package.json">package.json</a>, which:
+    <ul>
+      <li>Pushes the tag to GitHub</li>
+      <li>Publishes the npm release</li>
+      <li>Deploys to <a href="https://now.sh">Now</a></li>
+      <li>Opens the GitHub releases page so you can publish the release notes</li>
+    </ul>
+  </li>
+</ul>
+
+                </article>
+            </div>
+            <div class="w-1/4  h-12">
+                <h5 class="font-mono text-normal mb-2">Links</h5>
+                <a class="block mb-2" href="https://github.com/mivano-actions/release-drafter">
+                    <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16"
+                        data-view-component="true" class="inline-block align-text-bottom fill-current text-white mr-2">
+                        <path fill-rule="evenodd"
+                            d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z">
+                        </path>
+                    </svg>Release Drafter
+                </a>
+                <a class="block mb-2" href="https://github.com/mivano-actions/release-drafter/issues">
+                    <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16"
+                        data-view-component="true" class="inline-block align-text-bottom fill-current text-white mr-2">
+                        <path d="M8 9.5a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"></path>
+                        <path fill-rule="evenodd"
+                            d="M8 0a8 8 0 100 16A8 8 0 008 0zM1.5 8a6.5 6.5 0 1113 0 6.5 6.5 0 01-13 0z">
+                        </path>
+                    </svg>Open issues
+
+                </a>
+                <a class="block mb-2" href="https://github.com/mivano-actions/release-drafter/pulls">
+                    <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16"
+                        data-view-component="true" class="inline-block align-text-bottom fill-current text-white mr-2">
+                        <path fill-rule="evenodd"
+                            d="M7.177 3.073L9.573.677A.25.25 0 0110 .854v4.792a.25.25 0 01-.427.177L7.177 3.427a.25.25 0 010-.354zM3.75 2.5a.75.75 0 100 1.5.75.75 0 000-1.5zm-2.25.75a2.25 2.25 0 113 2.122v5.256a2.251 2.251 0 11-1.5 0V5.372A2.25 2.25 0 011.5 3.25zM11 2.5h-1V4h1a1 1 0 011 1v5.628a2.251 2.251 0 101.5 0V5A2.5 2.5 0 0011 2.5zm1 10.25a.75.75 0 111.5 0 .75.75 0 01-1.5 0zM3.75 12a.75.75 0 100 1.5.75.75 0 000-1.5z">
+                        </path>
+                    </svg>Pull requests
+                </a>
+            </div>
+        </div>
+    </div>
+
+    
+
+    
+</section>  
+
+        <footer class="text-gray-400 bg-gray-900 body-font pt-14">      
+ <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+   <a class="flex title-font font-medium items-center md:justify-start justify-center text-white">   
+     <span class="ml-3 text-xl">GitHub Actions Catalog</span>
+   </a>
+
+   <p class="text-sm text-gray-400 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-800 sm:py-2 sm:mt-0 mt-4">© mivano</p>
+   
+   <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
+         
+   </span>
+ </div>
+</footer>
+
+    </body>
+
+</html>
